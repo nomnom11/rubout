@@ -1538,9 +1538,9 @@ let infoReturn = null;
 function openInfo() {
   if (state === 'play') pause();
   const cur = OVERLAYS.find(id => !$('#' + id).hidden) || null;
-  if (cur === 'ov-info', 'ov-character') return;
+  if (cur === 'ov-info' || cur === 'ov-character') return;
   infoReturn = cur;
-  showOverlay('ov-info', 'ov-character');
+  showOverlay('ov-info');
   $('#ov-info .sheet').scrollTop = 0;
 }
 function closeInfo() { showOverlay(infoReturn || 'ov-start'); }
